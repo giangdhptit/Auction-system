@@ -1,0 +1,25 @@
+$colors: (
+    gray-100: #000000,
+    gray-90: #222222,
+    gray-80: #444444,
+    gray-70: #666666,
+    gray-60: #aaaaaa,
+    gray-40: #cccccc,
+    gray-20: #eeeeee,
+    gray-10: #f9f9f9,
+    white: #ffffff,
+    blue-100: #0029ff,
+    red-100: #ff0000,
+    pink-100: #f62b5f,
+    purple-100: #ff08c2,
+    orange-100: #fd6f2c,
+    yellow-100: #fcb400,
+    green-100: #1ec933,
+    light-blue-100: #18bfff,
+    deep-blue-100: #1976d2,
+    deep-blue-90: #1e88e5,
+    dark-green-100: #06a72a,
+);
+
+$primary: map-get($colors, blue-100);
+$text-base: map-get($colors, gray-100);

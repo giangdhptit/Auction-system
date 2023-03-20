@@ -1,0 +1,370 @@
+@import "variable";
+
+$i: 0;
+@while $i <= 500 {
+    .m-#{$i} {
+        margin: #{$i}px !important;
+    }
+    .-m-#{$i} {
+        margin: -#{$i}px !important;
+    }
+    .mt-#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    .-mt-#{$i} {
+        margin-top: -#{$i}px !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: #{$i}px !important;
+    }
+    .-mb-#{$i} {
+        margin-bottom: -#{$i}px !important;
+    }
+    .ml-#{$i} {
+        margin-left: #{$i}px !important;
+    }
+    .-ml-#{$i} {
+        margin-left: -#{$i}px !important;
+    }
+    .mr-#{$i} {
+        margin-right: #{$i}px !important;
+    }
+    .-mr-#{$i} {
+        margin-right: -#{$i}px !important;
+    }
+    .mx-#{$i} {
+        margin-left: #{$i}px !important;
+        margin-right: #{$i}px !important;
+    }
+    .-mx-#{$i} {
+        margin-left: -#{$i}px !important;
+        margin-right: -#{$i}px !important;
+    }
+    .my-#{$i} {
+        margin-top: #{$i}px !important;
+        margin-bottom: #{$i}px !important;
+    }
+    .-my-#{$i} {
+        margin-top: -#{$i}px !important;
+        margin-bottom: -#{$i}px !important;
+    }
+    .p-#{$i} {
+        padding: #{$i}px !important;
+    }
+    .pt-#{$i} {
+        padding-top: #{$i}px !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: #{$i}px !important;
+    }
+    .pl-#{$i} {
+        padding-left: #{$i}px !important;
+    }
+    .pr-#{$i} {
+        padding-right: #{$i}px !important;
+    }
+    .px-#{$i} {
+        padding-left: #{$i}px !important;
+        padding-right: #{$i}px !important;
+    }
+    .py-#{$i} {
+        padding-top: #{$i}px !important;
+        padding-bottom: #{$i}px !important;
+    }
+    .fs-#{$i} {
+        font-size: #{$i}px !important;
+    }
+    .w-#{$i} {
+        width: #{$i}px !important;
+    }
+    .h-#{$i} {
+        height: #{$i}px !important;
+    }
+    .l-#{$i} {
+        left: #{$i}px !important;
+    }
+    .r-#{$i} {
+        right: #{$i}px !important;
+    }
+    .t-#{$i} {
+        top: #{$i}px !important;
+    }
+    .b-#{$i} {
+        bottom: #{$i}px !important;
+    }
+    .flex-basis-#{$i} {
+        flex-basis: #{$i}px !important;
+    }
+    @if $i < 100 {
+        $i: $i + 2;
+    } @else {
+        $i: $i + 4;
+    }
+}
+
+$directions: ("top", "right", "bottom", "left");
+
+@each $name, $hex in $colors {
+    .text-#{"" + $name} {
+        color: #{$hex} !important;
+    }
+    .text-#{"" + $name}-hover:hover {
+        color: #{$hex} !important;
+    }
+    .text-#{"" + $name}-focus:focus {
+        color: #{$hex} !important;
+    }
+    .bg-#{"" + $name} {
+        background-color: #{$hex} !important;
+    }
+    .bg-#{"" + $name}-hover:hover {
+        background-color: #{$hex} !important;
+    }
+    .bg-#{"" + $name}-focus:focus {
+        background-color: #{$hex} !important;
+    }
+    .border-#{"" + $name} {
+        border-color: #{$hex} !important;
+    }
+    .border-#{"" + $name}-hover:hover {
+        border-color: #{$hex} !important;
+    }
+    .border-#{"" + $name}-focus:focus {
+        border-color: #{$hex} !important;
+    }
+    @each $direction in $directions {
+        .border-#{$direction}-#{"" + $name} {
+            border-#{$direction}-color: #{$hex} !important;
+        }
+        .border-#{$direction}-#{"" + $name}-hover:hover {
+            border-#{$direction}-color: #{$hex} !important;
+        }
+        .border-#{$direction}-#{"" + $name}-focus:focus {
+            border-#{$direction}-color: #{$hex} !important;
+        }
+    }
+}
+
+$flexDirection: ("column", "row", "column-reverse", "row-reverse", "inherit");
+@each $direction in $flexDirection {
+    .flex-direction-#{$direction} {
+        flex-direction: #{$direction} !important;
+    }
+}
+
+$displayProps: (
+    "block",
+    "inline-block",
+    "inline",
+    "flex",
+    "grid",
+    "inline-flex",
+    "inline-grid",
+    "table",
+    "inline-table",
+    "list-item",
+    "none",
+    "contents"
+);
+@each $display in $displayProps {
+    .d-#{$display} {
+        display: #{$display} !important;
+    }
+}
+
+$visibilityProps: ("visible", "hidden", "collapse", "initail", "inherit");
+@each $visibility in $visibilityProps {
+    .visibility-#{$visibility} {
+        visibility: #{$visibility};
+    }
+}
+
+$positions: ("static", "relative", "fixed", "absolute", "sticky");
+@each $position in $positions {
+    .position-#{$position} {
+        position: #{$position} !important;
+    }
+}
+
+$textAlignments: ("left", "right", "center", "revert", "revert", "unset");
+$positions: ("static", "absolute", "fixed", "relative", "sticky", "initial", "inherit");
+@each $position in $positions {
+    .position-#{$position} {
+        position: #{$position} !important;
+    }
+}
+
+$textAlignments: ("left", "right", "center", "revert");
+@each $textAlign in $textAlignments {
+    .text-#{$textAlign} {
+        text-align: #{$textAlign} !important;
+    }
+}
+
+$alignments: ("center", "space-between", "space-around", "space-evenly", "flex-start", "flex-end");
+@each $align in $alignments {
+    .justify-#{$align} {
+        justify-content: #{$align} !important;
+    }
+    .items-#{$align} {
+        align-items: #{$align} !important;
+    }
+    .justify-items-#{$align} {
+        justify-items: #{$align} !important;
+    }
+    .content-#{$align} {
+        align-content: #{$align} !important;
+    }
+}
+
+$borderRadius: (
+    xs: "2px",
+    sm: "4px",
+    md: "8px",
+    lg: "16px",
+);
+@each $name, $size in $borderRadius {
+    .border-radius-#{$name} {
+        border-radius: #{$size} !important;
+    }
+}
+
+.border-none {
+    border: none !important;
+}
+@each $direction in $directions {
+    .border-#{$direction}-none {
+        border-#{$direction}: none !important;
+    }
+}
+
+$borders: (1, 2, 3, 4, 5, 6, 7, 8);
+@each $border in $borders {
+    .border-#{$border} {
+        border-width: #{$border}px !important;
+    }
+    @each $direction in $directions {
+        .border-#{$direction}-#{$border} {
+            border-#{$direction}-width: #{$border}px !important;
+        }
+    }
+}
+
+$borderStyles: ("dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset", "hidden");
+@each $border in $borderStyles {
+    .border-#{$border} {
+        border-style: #{$border} !important;
+    }
+    @each $direction in $directions {
+        .border-#{$direction}-#{$border} {
+            border-#{$direction}-style: #{$border} !important;
+        }
+    }
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+.flex-shrink-0 {
+    flex-shrink: 0 !important;
+}
+.flex-grow-0 {
+    flex-grow: 0 !important;
+}
+.flex-1 {
+    flex: 1 !important;
+}
+
+// Width, height
+.max-w-350 {
+    max-width: 350px !important;
+}
+.max-w-200 {
+    max-width: 200px !important;
+}
+.max-w-100p{
+    max-width: 100% !important;
+}
+.min-h-563 {
+    min-height: 563px !important;
+}
+.min-h-275 {
+    min-height: 275px !important;
+}
+.w100p {
+    width: 100% !important;
+}
+.w90p {
+    width: 90% !important;
+}
+
+.m-height {
+    min-height: 100vh;
+}
+
+// Margin, padding
+.m-auto {
+    margin: auto;
+}
+
+// Other
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.ease-all {
+    transition: all ease 300ms;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Font weight
+$fontWeights: (400, 500, 700);
+@each $fontWeight in $fontWeights {
+    .fw-#{$fontWeight} {
+        font-weight: #{$fontWeight} !important;
+    }
+}
+// Line height
+$lineHeights: (17, 20, 26, 29);
+@each $lineHeight in $lineHeights {
+    .lh-#{$lineHeight} {
+        line-height: #{$lineHeight}px !important;
+    }
+}
+
+// Text decoration underline
+$textDecorations: ("line-through", "none", "overline", "underline");
+@each $textDecoration in $textDecorations {
+    .text-decoration-#{$textDecoration} {
+        text-decoration: #{$textDecoration} !important;
+    }
+}
+
+// Opacity
+$i: 0;
+@while $i <= 100 {
+    .opacity-#{$i} {
+        opacity: calc(#{$i} / 100) !important;
+    }
+    .opacity-#{$i}-hover:hover {
+        opacity: calc(#{$i} / 100) !important;
+    }
+    $i: $i + 10;
+}
+
+//overflow
+$overflows: ("auto", "hidden", "unset", "scroll", "overlay", "visible", "inherit", "initial", "revert");
+@each $overflow in $overflows {
+    .overflow-y-#{$overflow} {
+        overflow-y: #{$overflow} !important;
+    }
+}
